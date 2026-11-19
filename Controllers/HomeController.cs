@@ -1,25 +1,39 @@
-using Microsoft.AspNetCore.Mvc;
-using Portfolio.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Portfolio.Data;
+using Portfolio.Models;
 
-namespace Portfolio.Controllers
+namespace Portfolio.Controllers;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly PortfolioDbContext _db;
+
+    public HomeController(PortfolioDbContext db)
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        _db = db;
+    }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+    public IActionResult Index() => View();
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+    [HttpGet]
+    public async Task<IActionResult> Projects()
+    {
+        var projects = await _db.Projects
+            .AsNoTracking()
+            .OrderBy(p => p.DisplayOrder)
+            .ToListAsync();
+
+        return Json(projects);
+    }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+            RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+        });
     }
 }

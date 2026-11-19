@@ -1,8 +1,76 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    var skills = new Dictionary<string, string[]>
+    {
+        ["Languages"] = new[] { "C#", "Python", "SQL", "JavaScript", "HTML", "CSS" },
+        ["Backend"] = new[] { ".NET 10", "ASP.NET Core MVC", "Web API", "Entity Framework Core", "Dependency Injection", "async/await" },
+        ["Databases"] = new[] { "SQL Server", "PostgreSQL", "Schema design", "EF Core migrations" },
+        ["Web & APIs"] = new[] { "REST", "JSON", "Fetch API", "Razor", "Bootstrap", "Chart.js", "Swagger" },
+        ["Testing & Tools"] = new[] { "xUnit", "Git", "GitHub", "Visual Studio" },
+        ["AI & LLMs"] = new[] { "Claude", "Google Gemini", "ChatGPT", "Function calling", "Prompt design" }
+    };
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section id="home" class="hero">
+    <div class="container">
+        <p class="eyebrow">Hi, I'm</p>
+        <h1>Mukul <span class="accent">Choudhari</span></h1>
+        <p class="lead hero-text">Backend-focused developer building web apps and APIs with C# and ASP.NET Core.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#projects" class="btn btn-accent btn-lg">View projects</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">Contact me</a>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="row">
+            <div class="col-lg-8">
+                <p>I'm a Computer Science student at VIT Bhopal University (2022 to 2026) who enjoys building clean, well-structured backend systems. I work mostly with C#, ASP.NET Core, Entity Framework Core and SQL Server, and I like adding practical AI features with LLM APIs.</p>
+                <p>I care about the details that make an app reliable: transactional data, clear APIs, and code that can be tested without the web layer.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="row g-4">
+            @foreach (var group in skills)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-group">
+                        <h3>@group.Key</h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var skill in group.Value)
+                            {
+                                <span class="tech-badge">@skill</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <p id="projects-status" class="text-secondary">Loading projects...</p>
+        <div id="projects-grid" class="row g-4"></div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container text-center">
+        <h2 class="section-title">Get in touch</h2>
+        <p class="lead">I'm open to internships and entry-level backend roles.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            <a href="mailto:mukul.builds.734@@gmail.com" class="btn btn-accent btn-lg">Email me</a>
+            <a href="https://github.com/Mukul-Choudhari" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg">GitHub</a>
+        </div>
+    </div>
+</section>
