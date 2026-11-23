@@ -2,22 +2,29 @@
     var skills = new Dictionary<string, string[]>
     {
         ["Languages"] = new[] { "C#", "Python", "SQL", "JavaScript", "HTML", "CSS" },
-        ["Backend"] = new[] { ".NET 10", "ASP.NET Core MVC", "Web API", "Entity Framework Core", "Dependency Injection", "async/await" },
+        ["Backend"] = new[] { ".NET 10", "ASP.NET Core MVC", "Web API", "Entity Framework Core", "Dependency Injection", "async/await", "function calling" },
         ["Databases"] = new[] { "SQL Server", "PostgreSQL", "Schema design", "EF Core migrations" },
-        ["Web & APIs"] = new[] { "REST", "JSON", "Fetch API", "Razor", "Bootstrap", "Chart.js", "Swagger" },
+        ["Web & APIs"] = new[] { "REST API", "JSON", "Fetch API", "Razor", "Bootstrap", "Chart.js", "Swagger" },
         ["Testing & Tools"] = new[] { "xUnit", "Git", "GitHub", "Visual Studio" },
-        ["AI & LLMs"] = new[] { "Claude", "Google Gemini", "ChatGPT", "Function calling", "Prompt design" }
+        ["AI & LLMs"] = new[] { "Claude", "Google Gemini", "ChatGPT", "Prompt design" }
     };
 }
 
 <section id="home" class="hero">
     <div class="container">
-        <p class="eyebrow">Hi, I'm</p>
-        <h1>Mukul <span class="accent">Choudhari</span></h1>
-        <p class="lead hero-text">Backend-focused developer building web apps and APIs with C# and ASP.NET Core.</p>
-        <div class="d-flex flex-wrap gap-3 mt-4">
-            <a href="#projects" class="btn btn-accent btn-lg">View projects</a>
-            <a href="#contact" class="btn btn-outline-light btn-lg">Contact me</a>
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7 order-2 order-lg-1">
+                <h3 class="eyebrow">Hi, I'm</h3>
+                <h1>Mukul <span class="accent">Choudhari</span></h1>
+                <p class="lead hero-text">Backend-focused developer building web apps and APIs with C# and .NET </p>
+                <div class"d-flex flex-wrap gap-3 mt-4">
+                    <a href="#projects" class="btn btn-accent btn-lg">View projects</a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg">Contact me</a>
+                </div>
+            </div>
+            <div class="col-lg-5 order-1 order-lg-2 text-center">
+                <img src="~/images/profile.jpeg" alt="Photo of Mukul Choudhari" class="profile-photo" />
+            </div>
         </div>
     </div>
 </section>
@@ -25,11 +32,13 @@
 <section id="about">
     <div class="container">
         <h2 class="section-title">About</h2>
-        <div class="row">
-            <div class="col-lg-8">
-                <p>I'm a Computer Science student at VIT Bhopal University (2022 to 2026) who enjoys building clean, well-structured backend systems. I work mostly with C#, ASP.NET Core, Entity Framework Core and SQL Server, and I like adding practical AI features with LLM APIs.</p>
-                <p>I care about the details that make an app reliable: transactional data, clear APIs, and code that can be tested without the web layer.</p>
+        <div class="row g-5 align-items-start">
+            <div class="col-lg-7">
+                <p class="about-lead">I am a Computer Science and Engineering graduate. I build backend systems using C# and .NET that are reliable, well-structured and easy to maintain. </p>
+                <p>I'm looking for an opportunity, where I can keep learning, ship real features, and work with a team that cares about quality.</p>
+                <p class="about-cta">If you think I'm the right fit for your team, <a href="#contact">contact me</a>. I'd love to hear from you.</p>
             </div>
+            
         </div>
     </div>
 </section>
@@ -67,7 +76,6 @@
 <section id="contact">
     <div class="container text-center">
         <h2 class="section-title">Get in touch</h2>
-        <p class="lead">I'm open to internships and entry-level backend roles.</p>
         <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
             <a href="mailto:mukul.builds.734@@gmail.com" class="btn btn-accent btn-lg">Email me</a>
             <a href="https://github.com/Mukul-Choudhari" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg">GitHub</a>
