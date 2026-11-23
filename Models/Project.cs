@@ -7,5 +7,6 @@ public class Project
     public string Description { get; set; } = string.Empty;
     public string TechStack { get; set; } = string.Empty;
     public string GitHubUrl { get; set; } = string.Empty;
+    public string? DemoUrl { get; set; }
     public int DisplayOrder { get; set; }
 }
